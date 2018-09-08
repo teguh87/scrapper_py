@@ -36,7 +36,7 @@ You need to change the code if you want to generate index or profiles data
 	  scr.print_toJson()
   or
   if __name__ == '__main__':
-    scr = scrapper()
-    scr.print_toJson(type = 'profiles')
+    	scr = scrapper()
+    	scr.print_toJson(type = 'profiles')
 </pre>
 
