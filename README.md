@@ -28,3 +28,15 @@ $ cd scrapper_py # enter to the directory before install the dependancies
 $ pip install -r requirements.txt
 </pre>
 
+You need to change the code if you want to generate index or profiles data
+<pre>
+  ....
+  if __name__ == '__main__':
+	  scr = scrapper()
+	  scr.print_toJson()
+  or
+  if __name__ == '__main__':
+    scr = scrapper()
+    scr.print_toJson(type = 'profiles')
+</pre>
+
