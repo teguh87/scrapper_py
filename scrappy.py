@@ -20,8 +20,7 @@ class scrapper(object):
 			self.url = "http://stock.vietnammarkets.com/vietnam-stock-market.php"
 		else:
 			self.url = url 
-		
-
+			
 	def __request(self, url):
 		logging.debug('try to fetch content from: %s' %(url))
 		req = requests.get(url)
@@ -80,6 +79,9 @@ class scrapper(object):
 					dic['company_phone_number'] = self.__phone_formating(very_cleaned[idx + 3]) + '/' + self.__phone_formating(very_cleaned[idx + 4])
 				except :
 					pass
+					
+			if re.search(r'Business', line) : 
+				dic['industry'] = line
 			
 			email_patt = re.compile(r"\"?([-a-zA-Z0-9.`?{}]+@\w+\.\w+)\"?")
 			if email_patt.match(line) :
